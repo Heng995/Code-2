@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var name = new Array("PS4 Slim主機 CUH-2117", "任天堂 Nintendo Switch 藍紅手把組", "Xbox One S 500G同捆組")
+        var price = new Array(9980, 12999, 11000)
+        var imgfile = new Array("ps4.jpg", "switch.jpg", "xboxone.jpg")
+        document.write("<table border='1'>");
+        document.write("<tr>");
+        document.write("<td>品名</td>");
+        document.write("<td>單價</td>");
+        document.write("<td>產品圖示</td>");
+        document.write("</tr>");
+        for (var i = 0; i < name.length; i++) {
+            document.write("<tr>");
+            document.write("<td>" + name[i] + "</td>");
+            document.write("<td>" + price[i] + "</td>");
+            document.write("<td><img src='images/" + imgfile[i] + "' width=150></td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>

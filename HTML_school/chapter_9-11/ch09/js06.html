@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>熱門遊戲機選購</title>
+    <script>
+        function fnOrder() {
+            var selName, txtQty, divShow, qty,  price, total, imgName;
+            selName = document.getElementById("selName");
+            txtQty = document.getElementById("txtQty");
+            divShow = document.getElementById("divShow");
+            qty = txtQty.value;
+            price = selName.value;
+            total = qty * price;
+            imgName = selName.options[selName.selectedIndex].text + ".jpg";
+            divShow.innerHTML = "<p>單價：" + price + "</p>" +
+                "<p>小計：" + total + "</p>" +
+                "<img src='images/" + imgName + "' width='200'>"           
+        }
+    </script>
+</head>
+<body>
+    <h3>熱門遊戲機選購</h3>
+    <p>品名：
+        <select id="selName">
+            <option value="11000">ps4</option>
+            <option value="12900">switch</option>
+            <option value="12800">xboxone</option>
+        </select>
+    </p>
+    <p>數量：<input type="number" id="txtQty" min="1" value="1" /></p>
+    <p><input type="button" value="訂購" onclick="fnOrder()" /></p>
+    <hr />
+    <div id="divShow"></div>
+</body>
+</html>

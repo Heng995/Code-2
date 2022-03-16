@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>旅行相簿</title>
+    <style>
+        a:hover {
+            opacity: 0.2;
+            transform: rotate(10deg);
+        }
+
+        img {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var i = 1;
+        while (i <= 9) {
+            document.write("<a href='#'><img src='images/" + i + ".jpg'></a>");
+            i++;
+        }
+    </script>
+</body>
+</html>

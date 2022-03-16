@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var product = new Array();
+        product[0] = ["PS4 Slim主機 CUH-2117", 9980, "ps4.jpg"];
+        product[1] = ["任天堂 Nintendo Switch 藍紅手把組", 12990,"switch.jpg"];
+        product[2] = ["Xbox One S 500G同捆組", 11000,"xboxone.jpg"];
+        document.write("<table border='1'>");
+        document.write("<tr>");
+        document.write("<td>品名</td>");
+        document.write("<td>單價</td>");
+        document.write("<td>產品圖示</td>");
+        document.write("</tr>");
+        for (var i = 0; i < product.length; i++) {
+            document.write("<tr>");
+            document.write("<td>" + product[i][0] + "</td>");
+            document.write("<td>" + product[i][1] + "</td>");
+            document.write("<td><img src='images/" + product[i][2] + "' width=150></td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>
