@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Score Comments</title>
+    <script>
+        function fuClick() {
+
+            var score = document.getElementById("txtScore").value;
+
+            var show = document.getElementById("show");
+            var msg;
+            
+
+            if (score >= 60) {
+                msg = "Pass";
+            } else {
+                msg = "Failed";
+            }
+            show.innerHTML = msg;
+        }
+    </script> 
+</head>
+<body>
+    <p>score:<input type="text" id="txtScore"/></p>
+    <p><input type="button" value="confirm" onclick="fnClick()"></p>
+    <p id="show"></p>
+</body>
+</html>
