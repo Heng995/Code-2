@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ch10-01</title>
+        <style>
+            body {background-color: #ffed3f}
+        </style>
+        <script>
+          function show(){
+            console.log("1 document的子節點");
+            console.log(document.childNodes);   // 所有子節點     
+            
+            console.log("2 document的first:");
+            console.log(document.firstChild);   // 第 1 個子節點 
+            
+            console.log("3 document的last:");
+            console.log(document.lastChild);    // 最後 1 個子節點
+            
+            console.log("4 body的子節點:");
+            console.log(document.body.childNodes);
+                         // 取得 body 節點, 再取得其下的子節點  
+          }
+        </script>
+    </head>
+    <body onload="show()">
+      <h3>旗旗公司圖書系列</h3> 
+      <ul>
+        <li>網路概論與技術</li>
+        <li>程式設計</li>
+        <li>資料結構與演算法</li>
+        <li>資料庫</li>
+      </ul>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ch05-07</title>
+    </head>
+    <body>
+        <h2>調查表</h2>
+        <form name="form1">
+		<fieldset>
+		<legend><i>個人資料</i></legend>
+        <!-- input 元素放在 label 元素內 -->
+        <label>E-mail：<input name="email" type="email"></label><br>
+        <label>個人網站：<input name="website" type="url"></label><br>
+		
+        <!-- 於 label 元素中用 for 屬性設定關聯的 input 元素 -->
+        <label for="tel">連絡電話：</label>
+		<input name="tel" id="tel" type="tel"><br>
+        <label for="bill">行動電話帳單平均：</label>
+		<input name="bill" id="bill"
+		type="number">
+		
+        </fieldset>
+        <label>對本站的意見：<br>
+        <textarea name="comment" rows="5" cols="25"></textarea></label><br>
+        <input type="reset" value="清除重填">
+        <input type="submit" value="填完送出">
+        </form>
+    </body>
+</html>

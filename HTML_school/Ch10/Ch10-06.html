@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ch10-06</title>
+    <script type="text/javascript">
+    function addInputField(){
+      var parent = document.getElementById("book").parentNode;
+      
+      // 利用迴圈加入 4 個輸入欄位
+      for(var i=0;i<4;i++){
+        parent.appendChild(document.createElement("br"));
+        parent.appendChild(document.createTextNode("書名："));
+        parent.appendChild(document.createElement("input"));
+      }
+    }
+    
+    function addBook(){
+      // 取得所有 input 欄位
+      var inputs = document.getElementsByTagName("input");
+      var len = inputs.length;   // input 欄位總數
+      
+      // 取得清單物件
+      var list = document.getElementById("list");
+      var counter=0;    //計數器: 用來計算新增了幾本書
+      
+      // 利用迴圈逐一讀取, 處理所有輸入欄位
+      for(var i=0;i<len;i++) {
+        if(inputs[i].value != "") { // 輸入欄位非空白 
+          // 用輸入欄位的文字建立文字節點
+          var txtNode = document.createTextNode(inputs[i].value);
+        
+          // 建立新的 li 元素節點
+          var li = document.createElement("li");
+          li.appendChild(txtNode);
+        
+          // 將 li 元素節點加入成為清單元素的子節點
+          list.appendChild(li);
+          
+          counter++;    // 計數器值加 1
+          inputs[i].value = "";  // 將輸入欄位的資料清除
+        }
+      }
+      
+      if(counter == 0 ) { // 若計數器值為 0, 表示所有欄位都是空白
+        alert("請先輸入書名!");
+      } 
+      else {              // 若計數器值不是 0, 更新書籍數量
+        // 將目前清單子元素的總數顯示在網頁上
+        document.getElementById("bookCount").innerHTML = 
+          list.children.length;
+      }
+    }
+    </script>
+</head>
+<body onload="addInputField()">
+<p>
+  書名：<input id="book" type="text">
+  <button onclick="addBook()">新增</button>
+</p>
+<p>現在有<span id="bookCount">0</span>本書</p>
+<ul id="list"></ul>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ch10-12</title>
+        
+    </head>
+    <body>
+      <h2 id="mytime"></h2> 
+      <script>
+          showTime();  // 呼叫 showTime() 函式
+          
+          function showTime() {
+            var d = new Date();  // 取得日期物件
+            document.getElementById("mytime").innerHTML= 
+                    d.toLocaleTimeString();   // 將目前時間轉成字串後輸出
+            setTimeout(showTime, 1000); // 1 秒後執行 showTime()
+          }
+      </script>
+    </body>
+</html>

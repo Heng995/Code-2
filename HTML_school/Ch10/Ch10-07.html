@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ch10-07</title>
+    <script type="text/javascript">
+    function calculateBMI(){
+      var inputH = document.getElementById("height") // 取得身高欄位
+      var height = parseFloat(inputH.value); // 將欄位內容轉成浮點數
+      
+      var inputW = document.getElementById("weight") // 取得體重欄位
+      var weight = parseFloat(inputW.value); // 將欄位內容轉成浮點數
+
+      // 若 height、weight 任一變數非數值, 即結束函式
+      if(isNaN(height) || isNaN(weight)) return;
+      
+      // 若任一變數小於或等於 0 即結束函式
+      if(height<=0 || weight<=0) return;
+      
+      // 將身高由公分換算為公尺
+      height = height / 100;
+      
+      // BMI 指數 = 體重(公斤)/身高(公尺)平方
+      document.getElementById("bmi").innerHTML = 
+                          weight / (height * height);
+    }
+    </script>
+</head>
+<body>
+    <p>身高(公分)：<input id="height" type="number"></p>
+    <p>體重(公斤)：<input id="weight" type="number"></p>
+    <p><button onclick="calculateBMI()">計算BMI</button>
+       BMI指數 = <span id="bmi">0</span></p>
+</body>
+</html>

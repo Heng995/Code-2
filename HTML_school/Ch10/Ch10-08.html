@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ch10-08</title>
+    <style>
+        div    {clear:left;}
+        .small {
+            width:100px; 
+            float:left;
+            margin:2px; 
+            padding:2px; 
+            border: 1px black solid;}
+        #big   {width:640px; }
+    </style>
+    <script>
+      setInterval(play, 3000);  // 每隔 3 秒呼叫 1 次 play()
+      var index=0;              // 用來控制每次要顯示的圖片索引    
+      
+      function play(){
+        // 取得縮圖的 img 元素集合
+	    var imgs = document.getElementById("thumbs").    // 取得 id="thumbs" 的 div 區塊
+                            getElementsByTagName("img"); // 取得區塊中所有 img 子元素
+        // 取得大圖的 img 元素
+        var bigImg = document.getElementById("big");
+        
+        index++;  // 遞增索引值, 以播下一張照片
+        
+        // 若索引值超過範圍, 則設為0, 表示再重頭開始播放
+        if(index == imgs.length) index=0; 
+        
+        // 將大圖 img 的 src 屬性設為小圖之 src 屬性值
+        bigImg.setAttribute("src", 
+                            imgs[index].getAttribute("src"));
+      }
+    </script>
+</head>
+<body>
+  <h3>看蜂炮<h3>
+  <div id="thumbs">
+  <img class="small" src="media/DSCF3350.jpg">
+  <img class="small" src="media/DSCF3359.jpg">
+  <img class="small" src="media/DSCF3392.jpg">
+  <img class="small" src="media/DSCF3396.jpg">
+  </div>
+  <div>
+  <img id="big" src="media/DSCF3350.jpg">
+  </div>
+</body>
+</html>

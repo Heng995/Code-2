@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ch10-02</title>
+        <style>
+            body {background-color: #ffed3f}
+        </style>
+        <script>
+          function test(){
+            // 列出 document 的第1個和最後1個子元素
+		    console.log(document.firstElementChild);
+			console.log(document.lastElementChild);
+            
+            console.log("---以下是body的子元素---");
+            var b = document.body;      // 將 body 節點設給變數 b
+            console.log(b.children);    // 列出 body 所有子元素
+			console.log(b.children[0]); // 列出子元素集合中的第 0 個子元素
+			console.log(b.children[1]); // 列出子元素集合中的第 1 個子元素
+          }
+        </script>
+    </head>
+    <body onload="test()">
+      <h3>旗旗公司圖書系列</h3> 
+      <ul>
+        <li>網路概論與技術</li>
+        <li>程式設計</li>
+        <li>資料結構與演算法</li>
+        <li>資料庫</li>
+      </ul>
+    </body>
+</html>

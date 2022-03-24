@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ch05-02</title>
+    </head>
+    <body>
+    <!-- 使用 http://httpbin.org/get 測試 GET 送出的資料-->                      
+    <form name="login" action="http://httpbin.org/get">
+                                                                             
+    <!-- 若要測試 POST 送出的資料, 請使用以下標籤 -->                            
+    <!--<form name="login" action="http://httpbin.org/post" method="post">-->
+         帳號：<input name="account" type="text" size="8"><br>
+         密碼：<input name="pass" type="password" size="8"><br>
+         <input type="submit" value="登入">
+    </form>   
+    </body>
+</html>
