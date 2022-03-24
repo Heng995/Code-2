@@ -6,7 +6,25 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <script>
+
+    <body>
+        <select id="num1">
+            <option>未聯繫</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+        <select id="num2">
+            <option>未聯繫</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+
+        <p>計算結果：<a id="show"></a></p>
+        
+        <script>
             function add(){
 
                 var num1 = document.getElementById("num1");
@@ -113,25 +131,8 @@
                 msg = num1 / num2
                 show.innerHTML = msg;
             }
-    </script>
+        </script>
 
-    <body>
-        <select name="num1">
-            <option>未聯繫</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-
-        <select name="num2">
-            <option>未聯繫</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-        </select>
-
-        <p>計算結果：<a id="show"></a></p>
-        
         <input type="button" value="+" onclick="add()">
         <input type="button" value="-" onclick="sub()">
         <input type="button" value="*" onclick="mul()">
