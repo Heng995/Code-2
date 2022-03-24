@@ -12,6 +12,25 @@
                 var num1 = document.getElementById("num1");
                 var num2 = document.getElementById("num2");
                 var msg;
+                if (num1 == '1'){
+                    num1 = 1;
+                }
+                else if (num1 == '2'){
+                    num1 = 2;
+                }
+                else{
+                    num1 =3;
+                }
+
+                if (num2 == '4'){
+                    num2 = 4;
+                }
+                else if (num2 == '5'){
+                    num2 = 5;
+                }
+                else{
+                    num2 = 6;
+                }
                 msg = num1 + num2; 
                 show.innerHTML = msg;
             }
@@ -20,6 +39,25 @@
                 var num1 = document.getElementById("num1");
                 var num2 = document.getElementById("num2");
                 var msg;
+                if (num1 == '1'){
+                    num1 = 1;
+                }
+                else if (num1 == '2'){
+                    num1 = 2;
+                }
+                else{
+                    num1 =3;
+                }
+
+                if (num2 == '4'){
+                    num2 = 4;
+                }
+                else if (num2 == '5'){
+                    num2 = 5;
+                }
+                else{
+                    num2 = 6;
+                }
                 msg = num1 - num2; 
                 show.innerHTML = msg;
             }
@@ -27,6 +65,25 @@
                 var num1 = document.getElementById("num1");
                 var num2 = document.getElementById("num2");
                 var msg;
+                if (num1 == '1'){
+                    num1 = 1;
+                }
+                else if (num1 == '2'){
+                    num1 = 2;
+                }
+                else{
+                    num1 =3;
+                }
+
+                if (num2 == '4'){
+                    num2 = 4;
+                }
+                else if (num2 == '5'){
+                    num2 = 5;
+                }
+                else{
+                    num2 = 6;
+                }
                 msg = num1 * num2
                 show.innerHTML = msg;
             }
@@ -34,6 +91,25 @@
                 var num1 = document.getElementById("num1");
                 var num2 = document.getElementById("num2");
                 var msg;
+                if (num1 == '1'){
+                    num1 = 1;
+                }
+                else if (num1 == '2'){
+                    num1 = 2;
+                }
+                else{
+                    num1 =3;
+                }
+
+                if (num2 == '4'){
+                    num2 = 4;
+                }
+                else if (num2 == '5'){
+                    num2 = 5;
+                }
+                else{
+                    num2 = 6;
+                }
                 msg = num1 / num2
                 show.innerHTML = msg;
             }
@@ -54,8 +130,8 @@
             <option value="6">6</option>
         </select>
 
-        <p>計算結果：</p>
-        <p id="show"></p>
+        <p>計算結果：<a id="show"></a></p>
+        
         <input type="button" value="+" onclick="add()">
         <input type="button" value="-" onclick="sub()">
         <input type="button" value="*" onclick="mul()">
