@@ -14,7 +14,26 @@
                 var msg;
                 msg = num1 + num2; 
             }
-        </script>
+            function sub(){
+
+                var num1 = document.getElementById("num1");
+                var num2 = document.getElementById("num2");
+                var msg;
+                msg = num1 - num2; 
+            }
+            function mul(){
+                var num1 = document.getElementById("num1");
+                var num2 = document.getElementById("num2");
+                var msg;
+                msg = num1 * num2
+            }
+            function div(){
+                var num1 = document.getElementById("num1");
+                var num2 = document.getElementById("num2");
+                var msg;
+                msg = num1 / num2
+            }
+    </script>
 
     <body>
         <select name="num1">
@@ -33,10 +52,10 @@
 
         <p>計算結果：</p>
         <p>
-        <input type="button" value="+" onclick="fnClick()">
-        <input type="button" value="-">
-        <input type="button" value="*">
-        <input type="button" value="/">
+        <input type="button" value="+" onclick="add()">
+        <input type="button" value="-" onclick="sub()">
+        <input type="button" value="*" onclick="mul()">
+        <input type="button" value="/" onclick="div()">
         </p>
 
 
