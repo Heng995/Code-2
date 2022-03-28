@@ -1,8 +1,4 @@
 package Tronclass;
-
-class B extends A{
-    static int c=50;
-}
 class A{
     int a,b;
     static int c=-1;
@@ -10,6 +6,10 @@ class A{
         System.out.println(c);
     }
 }
+class B extends A{
+    static int c=50;
+}
+
 public class tc0222_4 {
     public static void main(String[]args){
         B.c=100;
