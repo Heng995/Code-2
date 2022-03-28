@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-
     <body>
         <select id="num1">
             <option>未聯繫</option>
@@ -30,105 +29,36 @@
                 var num1 = document.getElementById("num1");
                 var num2 = document.getElementById("num2");
                 var msg;
-                if (num1 == '1'){
-                    num1 = 1;
-                }
-                else if (num1 == '2'){
-                    num1 = 2;
-                }
-                else{
-                    num1 =3;
-                }
-
-                if (num2 == '4'){
-                    num2 = 4;
-                }
-                else if (num2 == '5'){
-                    num2 = 5;
-                }
-                else{
-                    num2 = 6;
-                }
-                msg = num1 + num2; 
+                num1 = num1[num1.selectedIndex].text
+                num2 = num2[num2.selectedIndex].text
+                msg = parseInt(num1) + parseInt(num2); 
                 show.innerHTML = msg;
             }
             function sub(){
-
                 var num1 = document.getElementById("num1");
                 var num2 = document.getElementById("num2");
                 var msg;
-                if (num1 == '1'){
-                    num1 = 1;
-                }
-                else if (num1 == '2'){
-                    num1 = 2;
-                }
-                else{
-                    num1 =3;
-                }
-
-                if (num2 == '4'){
-                    num2 = 4;
-                }
-                else if (num2 == '5'){
-                    num2 = 5;
-                }
-                else{
-                    num2 = 6;
-                }
-                msg = num1 - num2; 
+                num1 = num1[num1.selectedIndex].text
+                num2 = num2[num2.selectedIndex].text
+                msg = parseInt(num1) - parseInt(num2); 
                 show.innerHTML = msg;
             }
             function mul(){
                 var num1 = document.getElementById("num1");
                 var num2 = document.getElementById("num2");
                 var msg;
-                if (num1 == '1'){
-                    num1 = 1;
-                }
-                else if (num1 == '2'){
-                    num1 = 2;
-                }
-                else{
-                    num1 =3;
-                }
-
-                if (num2 == '4'){
-                    num2 = 4;
-                }
-                else if (num2 == '5'){
-                    num2 = 5;
-                }
-                else{
-                    num2 = 6;
-                }
-                msg = num1 * num2
+                num1 = num1[num1.selectedIndex].text
+                num2 = num2[num2.selectedIndex].text
+                msg = parseInt(num1) * parseInt(num2); 
                 show.innerHTML = msg;
             }
             function div(){
                 var num1 = document.getElementById("num1");
                 var num2 = document.getElementById("num2");
                 var msg;
-                if (num1 == '1'){
-                    num1 = 1;
-                }
-                else if (num1 == '2'){
-                    num1 = 2;
-                }
-                else{
-                    num1 =3;
-                }
-
-                if (num2 == '4'){
-                    num2 = 4;
-                }
-                else if (num2 == '5'){
-                    num2 = 5;
-                }
-                else{
-                    num2 = 6;
-                }
-                msg = num1 / num2
+                num1 = num1[num1.selectedIndex].text
+                num2 = num2[num2.selectedIndex].text
+                msg = parseFloat(num1) / parseFloat(num2); 
                 show.innerHTML = msg;
             }
         </script>
