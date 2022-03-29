@@ -9,32 +9,34 @@
 
 */
 //��H���O Shape
-class Shape {
+abstract class Shape {
    int width;
    int height;
-   abstract int calculateArea(){};
+   int calculateArea(){return width*height;};
    public String toString(){ return "W:"+width+" H:"+height ;}
    Shape(int width,int height){ 
                this.width=width;
                this.height=height;
    }
  }
+class Triangle extends Shape{}
 
-class Triangle extends Shape{
-     
-}
+class Rectangle extends Shape{}
 
-class Rectangle extends Shape{
-      
-}
-
-public class Area {
+public class AreaQ {
    public static void main(String [] args){
-      Rectangle obj1=new Rectangle(10,20);
+      
+      Rectangle obj1=new Rectangle();
+      obj1.width = 10;
+      obj1.height = 20;
       System.out.println("Area:"+obj1.calculateArea());
-      Triangle obj2=new Triangle(12,5);
+      Triangle obj2=new Triangle();
+      obj2.width = 12;
+      obj2.height = 5;
       System.out.println("Area:"+obj2.calculateArea());
-      Rectangle obj3=new Rectangle(5,6);
+      Rectangle obj3=new Rectangle();
+      obj3.width = 5;
+      obj3.height = 6;
       System.out.println("Area:"+obj3.calculateArea());      
    }
 }

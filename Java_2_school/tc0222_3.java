@@ -1,6 +1,6 @@
 //https://www.youtube.com/watch?v=_3RL5mdBD-Y&t=276s
 //繼承 同名變數 方法覆載
-package Tronclass;
+
 class B extends A{
     int a=11,b=22;
     int x=100;

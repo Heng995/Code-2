@@ -1,4 +1,3 @@
-package Tronclass;
 class A{
     int a,b;
     static int c=-1;
