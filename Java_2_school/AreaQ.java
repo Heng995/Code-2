@@ -19,7 +19,9 @@ abstract class Shape {
                this.height=height;
    }
  }
-class Triangle extends Shape{}
+class Triangle extends Shape{
+
+}
 
 class Rectangle extends Shape{}
 
