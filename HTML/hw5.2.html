@@ -5,10 +5,36 @@
         <title>homework5.2</title>
     </head>
     <body>
-        <div class="home-content wrapper">
-            <h2 class="page-title">網際服務軟體工程作業</h2>
+        <div style="text-align:center">
+            <h1>網際服務軟體工程作業</h1>
+            <h2>HTML 表單與地圖 iframe 練習</h2>
+            <br>
         </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6088.144242679229!2d120.98879642850346!3d24.86274894427998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683154faa8283b%3A0x92cb1c5564a574ef!2z5piO5paw56eR5oqA5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1648489943339!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+        <form name="submit" style="font-size: 18px;">
+            姓名:   <input name="name" type="text" size="10" required/><br>
+            年齡:   <input name="year_old" type="text" size="10/"><br>
+            E-Mail: <input name="email" type="email" size="10"/><br>
+            電話:   <input name="phone" type="text" size="10/"><br>
+            個人網站:<input name="website" type="url" size="10"/><br>
+            <input type="reset" value="clean" style="color:white ;background-color:royalblue;"/>
+            <input type="submit" value="submit" style="color:white ;background-color:royalblue;" onclick="clickdata()">       
+        </form>
+        
+        <script>
+            function clickdata(){
+                const form = document.forms['submit'];
+                const name = form.elements.name.value;
+                const year_old = form.elements.year_old.value;
+                const email = form.elements.email.value;
+                const phone = form.elements.phone.value;
+                const website = form.elements.website.value;
+                document.getElementById("data").innerHTML =
+                name;
+        </script>
+        <p>送出資料: <span id="data"></span></p>
+        <br>
+        <iframe src="https://www.google20.com/maps/embed?pb=!1m18!1m12!1m3!1d6088.144242679229!2d120.98879642850346!3d24.86274894427998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683154faa8283b%3A0x92cb1c5564a574ef!2z5piO5paw56eR5oqA5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1648489943339!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     </body>
 </html>
