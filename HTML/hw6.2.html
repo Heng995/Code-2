@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-Tw">
+    <head>
+        <meta charset="utf-8">
+        <title>6.2 作業 : 訂便當系統</title>
+    </head>
+    <body>
+        <h1 style="font-size:28px ;color:red;">訂便當系統</h1>
+        <form name="form1" onsubmit="validate();return false;" style="font-size: 20px;">
+            取用方式：
+            <input type="radio" name="form1" id = "form1" value="delivery" required>外送＋50
+            <input type="radio" name="form1" value="takewaay" required>外帶+0
+            <br>
+            <input type="radio" id="form2" value="luxurysoup" required>豪華湯＋50
+            <input type="radio" id="form2" value="soup" required>基本湯＋0
+            <br>
+            <input type="checkbox" name="form3" value="chicken">雞肉飯 90元   
+            <input type="text" name="form31" id="form31">份<br>
+            <input type="checkbox" name="form4" value="pork">豬肉飯＋100元
+            <input type="text" name="form41">份<br>
+            <input type="checkbox" name="form5" value="beef">牛肉飯＋110元
+            <input type="text" name="form5">份<br>
+
+            <input type="button" value="送出" style="font-size: 28px;" onclick="calculate()">
+            <input type="reset" value="清除" style="font-size: 28px;">
+        </form>
+
+
+        <script>
+            function calculate(){
+                var num1 = document.getElementById("form1")
+                var num2 = document.getElementById("form2")
+                var num3 = document.getElementById("form3")
+                var num4 = document.getElementById("form4")            
+                var num5 = document.getElementById("form5")
+                var num31 = document.getElementById("form31")
+                var num311 = parseFloat(num31.value);
+                var num41 = document.getElementById("form41")
+                var num411 = document.
+                var num51 = document.getElementById("form51")
+                var total=0;
+                
+                total=total+num311*90;
+                
+                show.innerHTML = total;
+            }
+        </script>
+        <p style="font-size: 28px;">總價 計算結果：<span id="show">0</a></p>
+    </body>
+</html>
