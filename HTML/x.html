@@ -1,0 +1,22 @@
+<input name="RQ_ck01" type="checkbox" value="1" />
+<input name="RQ_ck01" type="checkbox" value="2" />
+<input name="RQ_ck01" type="checkbox" value="3" />
+<input name="RQ_ck01" type="checkbox" value="4" />
+<input name="show" type="button" value="確認" onclick="ShowFun()" />
+<script type="text/javascript">
+    function ShowFun() {
+        var RQ_ck01 = document.getElementsByName("RQ_ck01");
+        var RQ_yn = 1;
+        for (var i = 0; i < RQ_ck01.length; i++) {
+            if (!RQ_ck01[i].checked) {
+                RQ_yn = 0; ;
+            }
+        }
+        if (RQ_yn == 1) {
+            alert("已全勾選");
+        } else {
+            alert("沒有全勾選");
+        }
+    }
+
+</script>
