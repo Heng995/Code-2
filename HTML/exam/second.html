@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="utf-8">
+        <title>客戶基本資料輸入</title>
+    </head>
+    <body>
+        <h1>客戶基本資料輸入</h1>
+        <form name="form1">
+            姓名:   <input name="name" id="name" type="text" required/><br><br>
+            年齡:   <input name="year_old" id="year_old" type="text"><br><br>
+            E-Mail: <input name="email" id="email" type="email"><br><br>
+            電話:   <input name="phone" id="phone" type="text" ><br><br>
+            個人網站:<input name="website" id="website" type="url"><br><br>                <input type="reset" value="clean" style="color:white ;background-color:darkcyan;"/>
+            <input type="button" id="submit" value="submit" style="color:white ;background-color:darkcyan;"/> 
+            <input type="button" value="回首頁" onclick="location.href='index.html'"/>   
+        </form>
+        <script>
+            function submit(){
+                const nameElement = document.getElementById("name");
+                const name = nameElement.value;
+                alert(name);
+            }
+        </script>
+    </body>
+</html>

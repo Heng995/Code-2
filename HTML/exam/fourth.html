@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <title>訂便當</title>
+    </head>
+    <body>
+        <h1 style="color: red">訂便當系統</h1>
+        <form name="form1" onsubmit="validate();return false;">
+            取用方式:
+            <input type="radio" name="take" value="50" required />外送＋50元
+            <input type="radio" name="take" value="0" required />外帶＋0元 <br /> 
+            湯 品 :
+            <input type="radio" name="soup" value="50" required />豪華湯＋50元
+            <input type="radio" name="soup" value="0" required />基本湯＋0元
+        </form>
+        <ol>
+            <input type="checkbox" id="cbchicken">
+            <label for="cbchicken">雞肉飯(NT$90): <input type="number" id="chicken" value="0" /> 份</label><br>
+            <input type="checkbox" id="cbpork">
+            <label for="cbpork">豬排飯(NT$100): <input type="number" id="pork" value="0" /> 份</label><br>
+            <input type="checkbox" id="cbbeef">
+            <label for="cbbeef">牛肉飯(NT$110): <input type="number" id="beef" value="0" /> 份</label><br>
+        </ol>
+        <p>總價 計算結果： <span id="total">0</span>元</p>
+        <input type="button" id="order" value="送出">
+        <input type="button" id="cancel" value="清除">
+        <input type="button" value="回首頁" onclick="location.href='index.html'" />
+        <script type="text/javascript">
+            var total = document.getElementById("total");
+            var chicken = document.getElementById("chicken");
+            var pork = document.getElementById("pork");
+            var beef = document.getElementById("beef");
+            var take = document.forms["form1"].elements["take"];
+            var soup = document.forms["form1"].elements["soup"];
+            var cbchicken = document.getElementById("cbchicken");
+            var cbpork = document.getElementById("cbpork");
+            var cbbeef = document.getElementById("cbbeef");
+            var chickenCups = 0,
+                porkCups = 0,
+                beefCups = 0,
+                money = 0;
+
+            var Order = (document.getElementById("order").onclick = function() {
+                if (money == 0) return; // 金額為 0 時不處理
+                var msg = "";
+                if (chickenCups > 0) msg += "雞肉飯 " + chickenCups + "碗\n";
+                if (porkCups > 0) msg += "豬排飯 " + porkCups + "碗\n";
+                if (beefCups > 0) msg += "牛肉飯" + beefCups + "碗\n";
+
+                if (take[0].checked) msg += "外送，";
+                else msg += "外帶，";
+                if (soup[0].checked) msg += "豪華湯\n";
+                else msg += "基本湯\n";
+                msg +=
+                    "總共 " +
+                    (chickenCups + porkCups + beefCups) +
+                    " 碗, " +
+                    money +
+                    "元";
+                alert(msg);
+            });
+
+            chicken.addEventListener("change", calc);
+            pork.addEventListener("change", calc);
+            beef.addEventListener("change", calc);
+            
+            function calc(e) {
+                console.log(this);
+                e.preventDefault();
+                var cups = parseInt(this.value);
+                if (this == chicken) {
+                    if (cups < 0)
+                        this.value = chickenCups; 
+                    else
+                        chickenCups = cups;
+                        cbchicken.checked = true;
+                } else if (this == pork) {
+                    if (cups < 0)
+                        this.value = porkCups;
+                    else porkCups = cups;
+                    cbpork.checked = true;
+                } else if (this == beef) {
+                    if (cups < 0) this.value = beefCups;
+                    else beefCups = cups;
+                    cbbeef.checked = true;
+                }
+                money = chickenCups * 90 + porkCups * 100 + beefCups * 110; 
+                if (take[0].checked) money += 50;
+                if (soup[0].checked) money += 50;
+                total.innerHTML = money; 
+            }
+            document.getElementById("cancel").onclick = function() {
+                chicken.value = 0;
+                pork.value = 0;
+                beef.value = 0;
+                chickenCups = 0;
+                porkCups = 0;
+                beefCups = 0;
+                money = 0;
+                take[0].checked = false;
+                soup[0].checked = false;
+                cbchicken.checked = false;
+                cbpork.checked = false;
+                cbbeef.checked = false;
+                total.innerHTML = money;
+            };
+        </script>
+    </body>
+</html>
