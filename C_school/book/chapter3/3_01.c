@@ -7,6 +7,7 @@ int main (void)
     
     printf("num1的平方為 %d\n", n1 * n1);
     printf("num2的平方為 %f\n", n2 * n2);
+    printf("12334");
     
     system ("pause");
     return 0;
