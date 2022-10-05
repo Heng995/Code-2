@@ -22,6 +22,12 @@ int main()
 
     printf("float = %e ~ %e(%d)\n", FLT_MIN, FLT_MAX,sizeof(float));
     printf("double = %e ~ %e(%d)\n", DBL_MIN, DBL_MAX, sizeof(double));
+
     system("PAUSE");
     return 0;
 }
+
+
+
+
+

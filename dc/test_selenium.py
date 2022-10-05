@@ -1,8 +1,7 @@
 from lib2to3.pgen2 import driver
 from selenium import webdriver
-
-chromedriver = '/Users/heng/Desktop/chromdriver'
-
-driver = webdriver.Chrome(chromedriver)
+import time
+driver = webdriver.Chrome('/Users/heng/Desktop/chromedriver')
 
 driver.get("https://chromedriver.chromium.org/downloads")
+time.sleep(10)
