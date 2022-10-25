@@ -26,4 +26,5 @@ int main()
     {
         printf("應繳納：%f\n", money*0.4-829600);
     }
+    return 0;
 }
