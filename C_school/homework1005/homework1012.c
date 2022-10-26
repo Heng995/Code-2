@@ -7,7 +7,7 @@ int main()
     scanf("%d", &score);
     if(score == target)
     {
-        printf("You are right\n");
+        printf("答對了\n");
     }
     else if(score<target)
     {

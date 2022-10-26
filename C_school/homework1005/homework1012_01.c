@@ -2,10 +2,12 @@
 #include<stdlib.h>
 int main()
 {
-    int score, target=60;
+    int score, target;
+    target=rand()%100+1;
+    do{
     printf("請輸入:");
     scanf("%d", &score);
-    
+  
     if(score == target)
     {
         printf("答對了\n");
@@ -18,5 +20,7 @@ int main()
     {
         printf("太大\n");
     }
+    }while (score = target);
+    
     return 0;
 }
