@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+//i+
 int add(int n)
 {
     if(n==1)
@@ -21,7 +22,7 @@ int main()
     int n;
     printf("input n:");
     scanf("%d", &n);
-    printf("sum=%d\n", add(n));
+    //printf("sum=%d\n", add(n));
     printf("total=%d\n", fac(n));
     return 0;
 }
