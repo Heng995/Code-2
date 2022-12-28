@@ -1,14 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
-void perfect()
+void perfect(int n)
 {
-        
-}
-int main()
-{
-    int i, j, s, n; 
-    printf("請輸入所選範圍上限：");
-    scanf("%d", &n); 
+    int i,j,s;
     for( i=2; i<=n; i++ )
     {
         s=0; 
@@ -19,6 +13,13 @@ int main()
         }
         if(s == i)
             printf("It's a perfect number:%d\n", i);
+        
     }
+}
+int main()
+{
+    int n=1000;
+    printf("1000之內的所有完美數:");
+    perfect(n);
     return 0;
 }
