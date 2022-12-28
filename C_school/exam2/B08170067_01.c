@@ -1,9 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 float cal(float p, float r, int n)
 {
     float S;
-    S = p+(1+r)*(1+r);
+
+    S = p+pow((1+r),n);
     return S;
 }
 int main()
