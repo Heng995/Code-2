@@ -47,28 +47,7 @@ void perfect(int n)
             printf("It's a perfect number:%d\n", i);
     }
 }
-void print99()//12
-{
-    printf("*****THE 9*9 ARITHEMETIC TABLE**\n");
-    printf("  ");
-    for(int a=1;a<=9;a++)
-    {
-        printf("%4d",a);
-    } 
-    printf("\n!--------------------------!\n");
-    for(int i=1;i<=9;i++)
-    {
-        printf("%d!", i);
-        for(int j=1;j<=9;j++)
-        {
-            
-            printf("%4d",i*j);
-        }
-        printf(" !\n");
-    }
-        printf("!--------------------------!\n");
-    return;
-}
+
 int main()
 {
     int item;
@@ -82,7 +61,7 @@ int main()
         printf(" 2.將10個5~15 的亂數取平均值後傳回\n");
         printf(" 3.計算兩数(宣告為double)的調和平均数\n");
         printf(" 4.我出1000之內的所有完美數\n");
-        printf("12.式印出九九乘法表\n");     
+     
 
         printf("\nselect item:");
         scanf("%d", &item);
@@ -98,7 +77,6 @@ int main()
             randavg();
             break;
         case 3: 
-
             printf("請輸入兩數:\n");
             scanf("%f%f", &n1, &n2);
             printf("%f",three(n1,n2));
@@ -106,9 +84,6 @@ int main()
         case 4:
             n=1000;
             perfect(n);
-            break;
-        case 12:
-            print99();
             break;
         }
         printf("play again?");
