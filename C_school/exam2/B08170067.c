@@ -38,7 +38,7 @@ double two(int n1, double n2)//3
 void perfect(int n)//4
 {
     int i,j,s;
-    for( i=2; i<=n; i++ )
+    for(i=2; i<=n; i++ )
     {
         s=0; 
         for( j=1; j<i; j++ )
@@ -74,17 +74,18 @@ void printout(char ch, int i, int j)//9
 
 void print99()//12
 {
+    int a,i,j;
     printf("*****THE 9*9 ARITHEMETIC TABLE**\n");
     printf("  ");
-    for(int a=1;a<=9;a++)
+    for(a=1;a<=9;a++)
     {
         printf("%4d",a);
     } 
     printf("\n!--------------------------!\n");
-    for(int i=1;i<=9;i++)
+    for(i=1;i<=9;i++)
     {
         printf("%d!", i);
-        for(int j=1;j<=9;j++)
+        for(j=1;j<=9;j++)
         {
             
             printf("%4d",i*j);
@@ -106,7 +107,6 @@ int main()
     {
         system("cls");
         printf(" 1.\n");
-        
         printf(" 2.\n");
         printf(" 3.\n");
         printf(" 4.\n");
