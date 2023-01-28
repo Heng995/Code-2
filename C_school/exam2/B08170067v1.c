@@ -4,15 +4,15 @@
 #include<math.h>
 float cal(float p, float r, int n)
 {
-    float S;
+    float s;
 
-    S = p+pow((1+r),n);
-    return S;
+    s = p+pow((1+r),n);
+    return s;
 }
 float randavg()
 {
-    int i1, result, sum=0;
-    for(i1=0;i1<10;i1++)
+    int i, result, sum=0;
+    for(i=0;i<10;i++)
     {
         result = rand()%(15-5+1)+5;
         printf("%d\n",result);
@@ -21,8 +21,7 @@ float randavg()
     return printf("%f\n", sum/10.0);
         
 }
-
-double two(int n1, double n2)
+double three(int n1, double n2)
 {
     int i;
     double sum=0;
@@ -33,7 +32,6 @@ double two(int n1, double n2)
     sum= 1/(sum/n1);
     return sum;
 }
-
 void perfect(int n)
 {
     int i,j,s;
@@ -49,32 +47,42 @@ void perfect(int n)
             printf("It's a perfect number:%d\n", i);
     }
 }
-
-float catalan(int n)
+void print99()//12
 {
-    int c1=1;
-    float sum=0;
-    sum = (((4*n)+2)*n)/(n+2);
-    return sum;
+    printf("*****THE 9*9 ARITHEMETIC TABLE**\n");
+    printf("  ");
+    for(int a=1;a<=9;a++)
+    {
+        printf("%4d",a);
+    } 
+    printf("\n!--------------------------!\n");
+    for(int i=1;i<=9;i++)
+    {
+        printf("%d!", i);
+        for(int j=1;j<=9;j++)
+        {
+            
+            printf("%4d",i*j);
+        }
+        printf(" !\n");
+    }
+        printf("!--------------------------!\n");
+    return;
 }
-
 int main()
 {
     int item;
     char ans;
     int i,j,s;
     float p,f,n1,n2,n;
-
     do
     {
         system("cls");
-        printf(" 1.\n");
-        
-        printf(" 2.\n");
-        printf(" 3.\n");
-        printf(" 4.\n");
-        printf(" 5.\n");
-
+        printf(" 1.出本利合S=p+(1+r)\n");        
+        printf(" 2.將10個5~15 的亂數取平均值後傳回\n");
+        printf(" 3.計算兩数(宣告為double)的調和平均数\n");
+        printf(" 4.我出1000之內的所有完美數\n");
+        printf("12.式印出九九乘法表\n");     
 
         printf("\nselect item:");
         scanf("%d", &item);
@@ -82,43 +90,27 @@ int main()
         switch (item)
         {
         case 1:
-
             printf("input p, f, n:");
             scanf("%f%f%d", &p,&f,&n);
             printf("%0.2f", cal(p,f,n));
-
             break;
-
         case 2: 
-
-            printf("5~15的亂數取平均\n");
             randavg();
-
             break;
-
         case 3: 
 
             printf("請輸入兩數:\n");
             scanf("%f%f", &n1, &n2);
-            printf("%f",two(n1,n2));
-
+            printf("%f",three(n1,n2));
             break;
-
         case 4:
-
             n=1000;
-            printf("1000之內的所有完美數\n");
             perfect(n);
             break;
-
-        case 5:
-            printf("輸入一個整數:");
-            scanf("%f", &n);
-            printf("%f\n",catalan(n));
+        case 12:
+            print99();
             break;
-
         }
-        
         printf("play again?");
         ans=getch();
         printf("\n");
