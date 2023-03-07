@@ -1,5 +1,2 @@
-from re import A
-
-
-a = str(12)
-print(type(a))
+x = int(input('x='))
+print('3*x=', 3*x)
