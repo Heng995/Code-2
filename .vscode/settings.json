@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "stdlib.h": "c"
-    }
+    },
+    "livePreview.defaultPreviewPath": "/HTML/Prosol/index.html"
 }
