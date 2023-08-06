@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>日期时间示例</title>
+  <style>
+    .date-time {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+  <script>
+    function updateDateTime() {
+      var now = new Date();
+      var dateTimeElement = document.getElementById("date-time");
+      dateTimeElement.innerHTML = now.toLocaleString();
+    }
+
+    // 每秒钟更新一次日期时间
+    setInterval(updateDateTime, 1000);
+  </script>
+</head>
+<body>
+  <div class="date-time" id="date-time"></div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>日期时间示例</title>
+  <style>
+    .date-time {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+  <script>
+    function updateDateTime() {
+      var now = new Date();
+      var dateTimeElement = document.getElementById("date-time");
+      dateTimeElement.innerHTML = now.toLocaleString();
+    }
+
+    // 每秒钟更新一次日期时间
+    setInterval(updateDateTime, 10000);
+  </script>
+</head>
+<body>
+  <div class="date-time" id="date-time"></div>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <title>點餐系統</title>
+        <style>
+            h1{text-align: center; font-size: 35px;}
+
+            #lunch01{
+                top: auto;
+                margin: 80px 30px;
+                border-style: solid; 
+                border-width: 3px;
+                border-color: grey;
+    
+            }
+            #content{
+                width: 400px;
+                height: 80px;
+            }
+            #person{
+                font-size: large;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html" style="color: black;">訂餐系統</a>
+                <a href="02.php" style="color: black;">訂購名單</a>  
+                <a href="001.php" style="color: black;">001</a>  
+
+            </nav>
+        </header>
+
+        <h1 class="title01">訂餐系統</h1>
+        <p style="color: red; text-align:center">每天訂餐時間為早上08:00~10:00</p>
+        <div style="text-align: center; color:brown; background-color: #f6f5f3" >     
+            <label style="float: left;">店家：八號月台便當</label>
+            <label>店址：新竹縣竹北市博愛街342號</label>
+            <label style="float: right;">外送電話：03-5512993</label>
+        </div>
+        <div class="top_text01">
+           <p style="font-size:20px" >餐點照片</p>
+        </div>
+
+        <div class="top_text02">
+            <p style="font-size:20px">餐點選項</p>
+        </div>
+        <div class="img_01">
+            <img id="lunch01" src="/01.jpeg" height="400">
+        </div>
+        
+            <ol>
+                <div class="item01">
+                <li><input type="checkbox" id="item01" onchange="calculatetotal()"> 藍帶豬排............[<font color="red">85元</font>] </li>
+                <label style="color: lightslategrey;">&emsp;&ensp;Pork Cordon Bleu</label>
+                <li><input type="checkbox" id="item02" onchange="calculatetotal()"> 蜂蜜味噌豬排.....[<font color="red">95元</font>] </li>
+                <label style="color: lightslategrey;">&emsp;&ensp;Honey Miso Pork Chops</label>
+                <li><input type="checkbox" id="item03" onchange="calculatetotal()"> 鹽燒豬肉飯.........[<font color="red">95元</font>] </li>  
+                <label style="color: lightslategrey;">&emsp;&ensp;Salt Pork Rice</label>        
+                <li><input type="checkbox" id="item04" onchange="calculatetotal()"> 香酥雞排飯.........[<font color="red">85元</font>] </li>
+                <label style="color: lightslategrey;">&emsp;&ensp;Crispy Chicken Chop Rice</label>
+                <li><input type="checkbox" id="item05" onchange="calculatetotal()"> 糖醋雞丁飯........[<font color="red">90元</font>] </li>
+                <label style="color: lightslategrey;">&emsp;&ensp;Sweet and Sour Chicken</label>
+                <li><input type="checkbox" id="item06" onchange="calculatetotal()"> 椒麻雞飯............[<font color="red">95元</font>] </li>        
+                <label style="color: lightslategrey;">&emsp;&ensp;Pepper Chicken Rice</label>       
+                <li><input type="checkbox" id="item07" onchange="calculatetotal()"> 紐奧良雞腿排飯.[<font color="red">95元</font>] </li>
+                <label style="color: lightslategrey;">&emsp;&ensp;Chicken Drumstick Riceu</label>               
+                <li><input type="checkbox" id="item08" onchange="calculatetotal()"> 酥炸雞腿飯.........[<font color="red">110元</font>] </li>
+                <label style="color: lightslategrey;">&emsp;&ensp;Crispy Fried Chicken Rice</label>
+            </div>
+                <div class="item02">               
+                <li><input type="checkbox" id="item09" onchange="calculatetotal()"> 蒲燒鯛魚肚飯.....[<font color="red">90元</font>] </li>  
+                <label style="color: lightslategrey;">&emsp;&ensp;Kabayaki Sea Bream Rice</label>             
+                <li><input type="checkbox" id="item10" onchange="calculatetotal()"> 黃金鱈魚排飯.....[<font color="red">100元</font>] </li>
+                <label style="color: lightslategrey;">&emsp;&ensp;Golden Cod Steak Rice</label>               
+                <li><input type="checkbox" id="item11" onchange="calculatetotal()"> 香腸飯.................[<font color="red">75元</font>] </li>  
+                <label style="color: lightslategrey;">&emsp;&ensp;Sausage Rice</label>             
+                <li><input type="checkbox" id="item12" onchange="calculatetotal()"> 嫩臀里肌飯.........[<font color="red">80元</font>] </li> 
+                <label style="color: lightslategrey;">&emsp;&ensp;Pork Loin Rice</label>             
+                <li><input type="checkbox" id="item13" onchange="calculatetotal()"> 控肉飯.................[<font color="red">90元</font>] </li>   
+                <label style="color: lightslategrey;">&emsp;&ensp;Soy-stewed Pork Rice</label>           
+                <li><input type="checkbox" id="item14" onchange="calculatetotal()"> 滷香雞排飯..........[<font color="red">85元</font>] </li> 
+                <label style="color: lightslategrey;">&emsp;&ensp;Braised Chicken Chop Rice</label>             
+                <li><input type="checkbox" id="item15" onchange="calculatetotal()"> 奮起湖滷雞腿......[<font color="red">90元</font>] </li>             
+                <label style="color: lightslategrey;">&emsp;&ensp;Braised Chicken Legs</label>  
+                <li><input type="checkbox" id="item16" onchange="calculatetotal()"> 鐵路滷排骨飯......[<font color="red">95元</font>] </li>
+                <label style="color: lightslategrey;">&emsp;&ensp;Braised Pork Ribs Rice</label>
+            </ol>
+        
+        <div class="a01">
+            <h2>合計金額
+                <a style="font-size: 70%;">(total)</a>  : 
+                <input type="text" id="totalPrice" size="8" style="font-size: 20px;"></h2>
+            <h2>其他註記
+                <a style="font-size: 70%;">(Other Marks)</a> : 
+            </h2>
+            <textarea id="content" maxlength="20"></textarea><br><br>
+    
+            <h2>訂購人
+                <a style="font-size: 70%;">(Order Person)</a>： 
+
+                <select id="person" style="font-size: 20px;">
+                    <option value="option1" selected disabled hidden>----</option>
+                    <?php
+                        $db_link=mysqli_connect("localhost", "root", "esxl0110", "prosol");
+                        $sql = "SELECT DISTINCT date FROM empoyee ";
+                        $result = mysqli_query($db_link,$sql);
+                        echo"<option value='$row[0]'>$row[0]</option>";
+                    ?>
+                </select>
+
+            </h2>
+
+            <h2>個人密碼
+                <a style="font-size: 70%;">(Password)</a>：
+                <input type="password" id="pw" size="15" style="font-size: 20px;">
+            </h2>
+            <button onclick="reset()" style="font-size: 20px;">
+                清除(clear)
+            </button>
+            <button onclick="order()" style="font-size:20px">
+                送出(send)
+            </button>
+        </div>    
+    </div>
+    </body>
+        <script>
+            function calculatetotal(){
+                var item01p = 85;
+                var item02p = 95;
+                var item03p = 95;
+                var item04p = 85;
+                var item05p = 90;
+                var item06p = 95;
+                var item07p = 95;
+                var item08p = 110;
+                var item09p = 90;
+                var item10p = 100;
+                var item11p = 75;
+                var item12p = 80;
+                var item13p = 90;
+                var item14p = 85;
+                var item15p = 90;
+                var item16p = 95;
+
+                var totalp = 0;
+
+                if (item01.checked){
+                    totalp = totalp + item01p;
+                }
+                if(item02.checked){
+                    totalp = totalp + item02p;
+                }
+                if(item03.checked){
+                    totalp = totalp + item03p;
+                }
+                if(item04.checked){
+                    totalp = totalp + item04p;
+                }
+                if(item05.checked){
+                    totalp = totalp + item05p;
+                }
+                if(item06.checked){
+                    totalp = totalp + item06p;
+                }
+                if(item07.checked){
+                    totalp = totalp + item07p;
+                }
+                if(item08.checked){
+                    totalp = totalp + item08p;
+                }
+                if(item09.checked){
+                    totalp = totalp + item09p;
+                }
+                if(item10.checked){
+                    totalp = totalp + item10p;
+                }
+                if(item11.checked){
+                    totalp = totalp + item11p;
+                }
+                if(item12.checked){
+                    totalp = totalp + item12p;
+                }
+                if(item13.checked){
+                    totalp = totalp + item13p;
+                }
+                if(item14.checked){
+                    totalp = totalp + item14p;
+                }
+                if(item15.checked){
+                    totalp = totalp + item15p;
+                }
+                if(item16.checked){
+                    totalp = totalp + item16p;
+                }
+                var totalPI = document.getElementById('totalPrice');
+                totalPI.value=totalp;     
+
+            }
+            function reset() {
+                var item01 = document.getElementById('item01');
+                var item02 = document.getElementById('item02');
+                var item03 = document.getElementById('item03');
+                var item04 = document.getElementById('item04');
+                var item05 = document.getElementById('item05');
+                var item06 = document.getElementById('item06');
+                var item07 = document.getElementById('item07');
+                var item08 = document.getElementById('item08');
+                var item09 = document.getElementById('item09');
+                var item10 = document.getElementById('item10');
+                var item11 = document.getElementById('item11');
+                var item12 = document.getElementById('item12');
+                var item13 = document.getElementById('item13');
+                var item14 = document.getElementById('item14');
+                var item15 = document.getElementById('item15');
+                var item16 = document.getElementById('item16');
+
+                var totalPI = document.getElementById('totalPrice');
+                var person = document.getElementById('person')
+                var content = document.getElementById('content')
+                var pw = document.getElementById('pw')
+
+                item01.checked = false;
+                item02.checked = false;
+                item03.checked = false;
+                item04.checked = false;
+                item05.checked = false;
+                item06.checked = false;
+                item07.checked = false;
+                item08.checked = false;
+                item09.checked = false;
+                item10.checked = false; 
+                item11.checked = false;
+                item12.checked = false;
+                item13.checked = false;
+                item14.checked = false;
+                item15.checked = false;
+                item16.checked = false;
+                totalPI.value = '';
+                content.value = '';
+                person.selectedIndex = 0;
+                pw.value = '';
+                
+            }
+
+            window.addEventListener('DOMContentLoaded', function(){
+                var selectElement = document.getElementById('person');
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'data.txt', true);
+                xhr.onreadystatechange = function() {
+                    if(xhr.readyState === 4 && xhr.status === 200){
+                        var data = xhr.responseText;
+
+                        var lines = data.split('\n');
+
+                        for (var i = 0; i < lines.length; i++) {
+                            var option = document.createElement('option');
+                            option.text = lines[i];
+                            selectElement.add(option);
+                        }
+                    } 
+                };
+                xhr.send();
+            });
+
+            function order(){
+                var person = document.getElementById('person');
+                var personOption = person.options[person.selectedIndex].text;
+                if (person.selectedIndex == '0')
+                {
+                    window.alert('輸入錯誤');
+                }
+                else{
+                    window.confirm(personOption + '您的訂單已送出');
+                    window.location.href = "02.html";
+                }      
+            }
+
+
+        </script>
+        <style>
+            .title01{
+                margin: 0px 0px;
+                height: 60px;
+                text-align: center;
+                line-height: 60px;
+
+                background-color: #cac6bd;
+            }
+            .top_text01{
+                height: 55px;
+                width: 50%;
+                float: left;
+                background-color: #f6f5f3;
+                line-height: 10px;
+                text-align: center;
+                margin: 0px 0px;
+                
+            }
+            .top_text02{
+                height: 55px;
+                width: 50%;
+                float: right;
+                background-color: #f6f5f3;
+                line-height: 10px;
+                text-align: center;
+                
+            }
+            .item02{
+                height: 400px;
+                width: 25%;
+                float: right;
+                text-align: left;
+
+            }
+            .item01{
+                height: 400px;
+                width: 25%;
+                float:left ;
+                text-align: left;
+
+            }
+            .img_01{
+                height: 800px;
+                width: 50%;
+                float: left;
+                 text-align: center
+            }
+            .a01{
+                height: 400px;
+                width: 50%;
+                float: right;
+                text-align: left;
+            }
+            .head{
+                border: 0;
+            }
+
+        </style>
+    </body>
+    
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>下拉选单读取文本数据</title>
+</head>
+<body>
+  <select id="options">
+    <!-- 动态生成选项 -->
+  </select>
+  <span style="font-family:Microsoft JhengHei;">微軟正黑體</span>
+  <span style="font-family:DFKai-sb;">標楷體字型</span>	
+  <span font>新細明體字型</span>	
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var selectElement = document.getElementById('options');
+      
+        // 使用 AJAX 请求读取文本文件
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'data.txt', true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var data = xhr.responseText;
+      
+            // 将文本内容按行分割为数组
+            var lines = data.split('\n');
+      
+            // 动态生成选项
+            for (var i = 0; i < lines.length; i++) {
+              var option = document.createElement('option');
+              option.text = lines[i];
+              selectElement.add(option);
+            }
+          }
+        };
+        xhr.send();
+      });
+      
+  </script>
+</body>
+</html>

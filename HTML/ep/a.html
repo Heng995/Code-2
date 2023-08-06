@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>訂餐網頁</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>訂餐服務</h1>
+  </header>
+  
+  <section id="menu">
+    <h2>菜單</h2>
+    <ul>
+      <li>
+        <img src="food1.jpg" alt="美味食物1">
+        <h3>菜品名稱1</h3>
+        <p>價格：$10</p>
+        <input type="number" id="item1Quantity" min="0">
+        <button onclick="calculateTotal()">加入訂單</button>
+      </li>
+      <li>
+        <img src="food2.jpg" alt="美味食物2">
+        <h3>菜品名稱2</h3>
+        <p>價格：$15</p>
+        <input type="number" id="item2Quantity" min="0">
+        <button onclick="calculateTotal()">加入訂單</button>
+      </li>
+      <!-- 其他菜品 -->
+    </ul>
+  </section>
+  
+  <section id="order">
+    <h2>我的訂單</h2>
+    <ul id="orderList">
+      <!-- 這裡將顯示已選擇的菜品 -->
+    </ul>
+    <p id="totalPrice">總價：$0</p>
+    <button id="checkout">結帳</button>
+  </section>
+  
+  <footer>
+    <p>版權聲明 &copy; 2023</p>
+  </footer>
+  
+  <script>
+    function calculateTotal() {
+      var item1Quantity = parseInt(document.getElementById('item1Quantity').value);
+      var item2Quantity = parseInt(document.getElementById('item2Quantity').value);
+    
+      var item1Price = 10; // 菜品1的價格
+      var item2Price = 15; // 菜品2的價格
+    
+      var totalPrice = (item1Quantity * item1Price) + (item2Quantity * item2Price);
+    
+      document.getElementById('totalPrice').innerHTML = '總價：$' + totalPrice;
+      
+      // 更新訂單列表
+      var orderList = document.getElementById('orderList');
+      orderList.innerHTML = ''; // 清空訂單列表
+    
+      if (item1Quantity > 0) {
+        var item1Total = item1Quantity * item1Price;
+        var item1ListItem = document.createElement('li');
+        item1ListItem.innerHTML = '菜品名稱1 x ' + item1Quantity + '：$' + item1Total;
+        orderList.appendChild(item1ListItem);
+      }
+    
+      if (item2Quantity > 0) {
+        var item2Total = item2Quantity * item2Price;
+        var item2ListItem = document.createElement('li');
+        item2ListItem.innerHTML = '菜品名稱2 x ' + item2Quantity + '：$' + item2Total;
+        orderList.appendChild(item2ListItem);
+      }
+    }
+    
+  </script>
+</body>
+</html>

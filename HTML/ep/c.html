@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>點餐網頁</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>點餐服務</h1>
+  </header>
+  
+  <section id="menu">
+    <h2>菜單</h2>
+    <ul>
+      <li>
+        <input type="checkbox" id="item1" onchange="calculateTotal()">
+        <label for="item1">菜品1 - $10</label>
+      </li>
+      <li>
+        <input type="checkbox" id="item2" onchange="calculateTotal()">
+        <label for="item2">菜品2 - $15</label>
+      </li>
+      <!-- 其他菜品 -->
+    </ul>
+  </section>
+  
+  <section id="order">
+    <h2>我的訂單</h2>
+    <input type="text" id="totalPrice" readonly>
+    <button onclick="resetOrder()">重置</button>
+  </section>
+  
+  <footer>
+    <p>版權聲明 &copy; 2023</p>
+  </footer>
+  
+  <script>
+    function calculateTotal() {
+        var item1 = document.getElementById('item1');
+        var item2 = document.getElementById('item2');
+      
+        var item1Price = 10; // 菜品1的價格
+        var item2Price = 15; // 菜品2的價格
+      
+        var totalPrice = 0;
+      
+        if (item1.checked) {
+          totalPrice += item1Price;
+        }
+      
+        if (item2.checked) {
+          totalPrice += item2Price;
+        }
+      
+        var totalPriceInput = document.getElementById('totalPrice');
+        totalPriceInput.value = '$' + totalPrice;
+      }
+      
+      function resetOrder() {
+        var item1 = document.getElementById('item1');
+        var item2 = document.getElementById('item2');
+        var totalPriceInput = document.getElementById('totalPrice');
+      
+        item1.checked = false;
+        item2.checked = false;
+        totalPriceInput.value = '';
+      }
+      
+  </script>
+</body>
+</html>

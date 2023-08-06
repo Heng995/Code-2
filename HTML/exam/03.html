@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>读取txt文件</title>
+</head>
+<body>
+  <h1>将txt文件转换为下拉式选单</h1>
+
+  <select id="dropdown">
+    <option value="">请选择</option>
+  </select>
+
+  <script>
+    // 使用JavaScript读取txt文件
+    function readTextFile(file) {
+      var rawFile = new XMLHttpRequest();
+      rawFile.open("GET", file, false);
+      rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4 && rawFile.status === 200) {
+          var allText = rawFile.responseText;
+          convertToDropdown(allText);
+        }
+      }
+      rawFile.send(null);
+    }
+
+    // 将文本转换为下拉式选单
+    function convertToDropdown(text) {
+      var lines = text.split("\n");
+      var dropdown = document.getElementById("dropdown");
+
+      for (var i = 0; i < lines.length; i++) {
+        var option = document.createElement("option");
+        option.text = lines[i];
+        dropdown.add(option);
+      }
+    }
+
+    // 读取并转换txt文件
+    readTextFile("data.txt");
+  </script>
+</body>
+</html>
